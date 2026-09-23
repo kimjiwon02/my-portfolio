@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>신입 실내건축 디자이너 입사지원 포트폴리오</title>
   
-  <!-- Fonts: Syne (Display), Plus Jakarta Sans (Modern Sans), Pretendard (Korean Body), JetBrains Mono (Specs) -->
+  <!-- Fonts: Rubik (UI Sans), Syne (Display), Plus Jakarta Sans (Modern Sans), Pretendard (Korean Body), JetBrains Mono (Code/Specs) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 
   <!-- Tailwind CSS -->
@@ -18,23 +18,21 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Plus Jakarta Sans', 'Pretendard', 'sans-serif'],
-            display: ['Syne', 'Plus Jakarta Sans', 'Pretendard', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
+            sans: ['Rubik', 'Plus Jakarta Sans', 'Pretendard', 'sans-serif'],
+            display: ['Syne', 'Rubik', 'Pretendard', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Monaco', 'monospace'],
           },
           colors: {
-            teak: {
-              50: '#FAF8F5',
-              100: '#F4F0E8',
-              200: '#E7DFC6',
-              300: '#D5C4A1',
-              400: '#BBA47E',
-              500: '#9C826B',
-              600: '#8C6D53',
-              700: '#6B523E',
-              800: '#4A392C',
-              900: '#2A221C',
-              950: '#1A1410',
+            sentry: {
+              midnight: '#150f23',
+              canvas: '#1f1633',
+              lime: '#c2ef4e',
+              pink: '#fa7faa',
+              violet: '#6a5fc1',
+              deepviolet: '#422082',
+              hairline: '#362d59',
+              muted: '#bdb8c0',
+              faint: '#3f3849'
             }
           }
         }
@@ -44,8 +42,8 @@
 
   <style>
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #F7F4EE; }
-    ::-webkit-scrollbar-thumb { background: #C5BBAE; border-radius: 3px; }
+    ::-webkit-scrollbar-track { background: #150f23; }
+    ::-webkit-scrollbar-thumb { background: #362d59; border-radius: 3px; }
 
     /* ⭐️ 한글 텍스트 단어 단위 자연스러운 줄바꿈 보장 (글자 쪼개짐 방지) ⭐️ */
     h1, h2, h3, h4, .break-keep, [id^="card-title-"], [id^="card-concept-"], #modal-title, #modal-concept {
@@ -129,7 +127,7 @@
     }
   </style>
 </head>
-<body class="bg-[#F7F4EE] text-[#241E1A] antialiased font-sans pb-24">
+<body class="bg-[#1f1633] text-[#FFFFFF] antialiased font-sans pb-24">
 
   <!-- ========================================== -->
   <!-- ⭐️ 웹 전용 레이아웃 (인쇄 시 완전히 소멸) ⭐️ -->
@@ -137,70 +135,70 @@
   <div id="web-layout">
 
     <!-- ⭐️ [최상단 포트폴리오 안내 띠 배너] ⭐️ -->
-    <div class="bg-[#1A1410] text-[#F7F4EE] text-xs py-2.5 px-6 border-b border-[#2A221C]">
+    <div class="bg-[#150f23] text-[#bdb8c0] text-xs py-2.5 px-6 border-b border-[#362d59]">
       <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-[11px] sm:text-xs font-mono">
         <div class="flex items-center gap-2.5">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="font-bold text-[#FAF8F5] tracking-wider font-mono">SPATIAL DESIGN &amp; INTERIOR ARCHITECTURE</span>
+          <span class="w-2.5 h-2.5 rounded-full bg-[#c2ef4e] animate-pulse"></span>
+          <span class="font-bold text-[#FFFFFF] tracking-wider font-mono">SPATIAL DESIGN &amp; INTERIOR ARCHITECTURE</span>
         </div>
         <div class="flex items-center gap-3">
-          <span class="text-stone-400 font-mono">신입 실내건축 디자이너 입사지원 공식 포트폴리오</span>
+          <span class="text-[#bdb8c0] font-mono">신입 실내건축 디자이너 입사지원 공식 포트폴리오</span>
         </div>
       </div>
     </div>
 
     <!-- Header -->
-    <header class="bg-[#F7F4EE]/90 backdrop-blur-xl border-b border-[#E6DFD5] py-3.5 sticky top-0 z-40 transition-all">
+    <header class="bg-[#150f23]/90 backdrop-blur-xl border-b border-[#362d59] py-3.5 sticky top-0 z-40 transition-all">
       <div class="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
         <div class="flex flex-col">
           <div class="flex items-center gap-2.5 cursor-pointer select-none" onclick="onSecretLogoClick()" title="KD Portfolio">
-            <span class="w-3.5 h-3.5 bg-[#8C6D53] rounded-xs shadow-sm"></span>
-            <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-[#1A1410] font-display">
+            <span class="w-3.5 h-3.5 bg-[#c2ef4e] rounded-xs shadow-sm"></span>
+            <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white font-display">
               PORTFOLIO
             </span>
-            <span class="px-2.5 py-0.5 text-[10px] uppercase font-mono tracking-wider bg-[#1A1410] text-[#FAF8F5] rounded-full font-bold shadow-xs">
+            <span class="px-2.5 py-0.5 text-[10px] uppercase font-mono tracking-wider bg-[#c2ef4e] text-[#150f23] rounded-full font-bold shadow-xs">
               Selected Works
             </span>
           </div>
-          <span class="text-[10px] tracking-[0.2em] text-[#8C6D53] uppercase ml-6 font-mono font-semibold">
+          <span class="text-[10px] tracking-[0.2em] text-[#bdb8c0] uppercase ml-6 font-mono font-semibold">
             Junior Interior Architect Portfolio
           </span>
         </div>
 
-        <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold uppercase tracking-wider text-[#6B523E]">
-          <a href="#portfolio" id="web-nav-portfolio" class="hover:text-[#1A1410] transition-colors py-1">핵심 프로젝트 보기</a>
-          <a href="#designer-profile" class="hover:text-[#1A1410] transition-colors py-1">지원자 프로필 (Profile)</a>
+        <nav class="hidden md:flex items-center space-x-6 text-xs font-semibold uppercase tracking-wider text-[#bdb8c0]">
+          <a href="#portfolio" id="web-nav-portfolio" class="hover:text-[#c2ef4e] transition-colors py-1">핵심 프로젝트 보기</a>
+          <a href="#designer-profile" class="hover:text-[#c2ef4e] transition-colors py-1">지원자 프로필 (Profile)</a>
           <div class="flex items-center gap-2">
             <button 
               onclick="openResumeModal('landing')"
-              class="editor-only px-3.5 py-2 bg-[#F4F0E8] hover:bg-[#1A1410] hover:text-white border border-[#E7DFC6] text-[#2A221C] text-xs font-semibold uppercase tracking-wider transition-all rounded-full flex items-center gap-1.5 shadow-2xs cursor-pointer"
+              class="editor-only px-3.5 py-2 bg-[#1f1633] hover:bg-[#c2ef4e] hover:text-[#150f23] border border-[#362d59] text-white text-xs font-semibold uppercase tracking-wider transition-all rounded-full flex items-center gap-1.5 shadow-2xs cursor-pointer"
               title="대문(홈) 상단 배지, 메인 슬로건 및 소개글을 직접 수정합니다"
             >
               <span>🏠 대문 문구 수정</span>
             </button>
             <button 
               onclick="openResumeModal('resume')"
-              class="editor-only px-3.5 py-2 bg-[#F4F0E8] hover:bg-[#1A1410] hover:text-white border border-[#E7DFC6] text-[#2A221C] text-xs font-semibold uppercase tracking-wider transition-all rounded-full flex items-center gap-1.5 shadow-2xs cursor-pointer"
+              class="editor-only px-3.5 py-2 bg-[#1f1633] hover:bg-[#c2ef4e] hover:text-[#150f23] border border-[#362d59] text-white text-xs font-semibold uppercase tracking-wider transition-all rounded-full flex items-center gap-1.5 shadow-2xs cursor-pointer"
               title="이력서와 자기소개서 세부 내용을 실시간으로 직접 수정합니다"
             >
               <span>✏️ 이력서·자소서 편집</span>
             </button>
             <button 
               onclick="exportCurrentWebsiteHTML()"
-              class="editor-only px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white border border-emerald-800 text-xs font-bold uppercase tracking-wider transition-all rounded-full flex items-center gap-1.5 shadow-sm cursor-pointer"
+              class="editor-only px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-700 text-xs font-bold uppercase tracking-wider transition-all rounded-full flex items-center gap-1.5 shadow-sm cursor-pointer"
               title="현재까지 수정한 모든 내용이 영구 반영된 최신 index.html 파일을 다운로드합니다"
             >
               <span>💾 수정본 영구 저장</span>
             </button>
             <button 
               onclick="generatePDF('resume')"
-              class="px-3.5 py-2 bg-white border border-[#E6DFD5] text-[#2A221C] text-xs font-semibold uppercase tracking-wider hover:border-[#1A1410] transition-all rounded-full shadow-2xs cursor-pointer"
+              class="px-3.5 py-2 bg-[#1f1633] border border-[#362d59] text-[#bdb8c0] text-xs font-semibold uppercase tracking-wider hover:border-[#c2ef4e] hover:text-white transition-all rounded-full shadow-2xs cursor-pointer"
             >
               <span>📄 이력서·자소서 다운로드</span>
             </button>
             <button 
               onclick="generatePDF('portfolio')"
-              class="px-4.5 py-2 bg-[#1A1410] text-[#FAF8F5] text-xs font-bold uppercase tracking-wider hover:bg-[#8C6D53] transition-all rounded-full shadow-md flex items-center gap-1.5 cursor-pointer"
+              class="px-4.5 py-2 bg-[#c2ef4e] text-[#150f23] text-xs font-bold uppercase tracking-wider hover:bg-[#b2df3e] transition-all rounded-full shadow-md flex items-center gap-1.5 cursor-pointer"
             >
               <span>📥 포트폴리오 다운로드</span>
             </button>
@@ -211,20 +209,20 @@
 
     <!-- Hero Bento Section -->
     <section class="max-w-7xl mx-auto px-6 sm:px-8 pt-12 pb-14">
-      <div class="bg-white/80 backdrop-blur-md rounded-3xl border border-[#E6DFD5] p-8 sm:p-14 shadow-[0_10px_35px_rgba(42,34,28,0.03)] space-y-7 relative overflow-hidden">
-        <div class="absolute -right-20 -top-20 w-80 h-80 bg-gradient-to-br from-[#E7DFC6]/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      <div class="bg-[#150f23] rounded-3xl border border-[#362d59] p-8 sm:p-14 shadow-2xl space-y-7 relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-80 h-80 bg-gradient-to-br from-[#c2ef4e]/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
 
-        <div id="web-hero-badge" class="inline-flex items-center gap-2.5 px-4 py-1.5 bg-[#F4F0E8] text-[#6B523E] text-xs tracking-widest uppercase font-mono font-bold rounded-full border border-[#E7DFC6] shadow-2xs">
-          <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+        <div id="web-hero-badge" class="inline-flex items-center gap-2.5 px-4 py-1.5 bg-[#1f1633] text-[#c2ef4e] text-xs tracking-widest uppercase font-mono font-bold rounded-full border border-[#362d59] shadow-2xs">
+          <span class="w-2 h-2 rounded-full bg-[#c2ef4e]"></span>
           <span>Junior Interior Architect &amp; Spatial Designer Portfolio</span>
         </div>
 
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#1A1410] leading-[1.1] font-display">
-          <span id="web-hero-title1" class="block">Logic in Design,</span>
-          <span id="web-hero-title2" class="font-normal text-[#8C6D53]">Precision in Drafting.</span>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] font-display">
+          <span id="web-hero-title1" class="inline-block bg-[#c2ef4e] text-[#150f23] px-3 py-1 rounded-sm mr-2 mb-2 font-black">공간은 사람의 삶을</span>
+          <span id="web-hero-title2" class="font-normal text-white">닮아야 합니다.</span>
         </h1>
 
-        <p id="web-hero-desc" class="text-[#6B523E] text-base sm:text-lg font-light leading-relaxed whitespace-pre-line max-w-3xl">
+        <p id="web-hero-desc" class="text-[#bdb8c0] text-base sm:text-lg font-light leading-relaxed whitespace-pre-line max-w-3xl">
           신입 실내건축 디자이너 입사지원 포트폴리오입니다.
           공간 기획 논리부터 정밀 2D CAD 실시도면, 3D 실시간 렌더링 및 디테일로 완성한 엄선된 프로젝트 마스터피스를 확인하세요.
         </p>
@@ -233,14 +231,14 @@
         <div class="pt-3 flex flex-wrap items-center gap-3">
           <a
             href="#portfolio"
-            class="px-6 py-3.5 bg-[#1A1410] text-[#FAF8F5] text-xs font-bold tracking-widest uppercase hover:bg-[#8C6D53] transition-all rounded-full shadow-md inline-flex items-center gap-2"
+            class="px-6 py-3.5 bg-[#c2ef4e] text-[#150f23] text-xs font-bold tracking-widest uppercase hover:bg-[#b2df3e] transition-all rounded-full shadow-md inline-flex items-center gap-2"
           >
             <span>프로젝트 보기 ↓</span>
           </a>
 
           <button
             onclick="openResumeModal('landing')"
-            class="editor-only px-5 py-3.5 bg-[#F4F0E8] hover:bg-[#E7DFC6] text-[#2A221C] text-xs font-bold tracking-wider uppercase transition-all inline-flex items-center gap-2 shadow-2xs border border-[#E7DFC6] rounded-full cursor-pointer"
+            class="editor-only px-5 py-3.5 bg-[#1f1633] hover:bg-[#362d59] text-white text-xs font-bold tracking-wider uppercase transition-all inline-flex items-center gap-2 shadow-2xs border border-[#362d59] rounded-full cursor-pointer"
             title="대문(홈) 상단 배지, 메인 슬로건 및 소개글을 직접 수정합니다"
           >
             <span>🏠 대문 문구 직접 수정</span>
@@ -248,7 +246,7 @@
           
           <button
             onclick="openResumeModal('resume')"
-            class="editor-only px-5 py-3.5 bg-[#8C6D53] hover:bg-[#6B523E] text-white text-xs font-bold tracking-wider uppercase transition-all inline-flex items-center gap-2 shadow-sm rounded-full cursor-pointer"
+            class="editor-only px-5 py-3.5 bg-[#c2ef4e] text-[#150f23] hover:bg-[#b2df3e] text-xs font-bold tracking-wider uppercase transition-all inline-flex items-center gap-2 shadow-sm rounded-full cursor-pointer"
             title="이력서와 자기소개서 세부 내용을 실시간으로 직접 수정합니다"
           >
             <span>✏️ 이력서·자소서 직접 수정</span>
@@ -256,14 +254,14 @@
 
           <button
             onclick="generatePDF('resume')"
-            class="px-5.5 py-3.5 bg-white border border-[#E6DFD5] text-[#2A221C] text-xs font-bold tracking-wider uppercase hover:border-[#1A1410] transition-all inline-flex items-center gap-2 shadow-2xs rounded-full cursor-pointer"
+            class="px-5.5 py-3.5 bg-[#1f1633] border border-[#362d59] text-white text-xs font-bold tracking-wider uppercase hover:border-[#c2ef4e] transition-all inline-flex items-center gap-2 shadow-2xs rounded-full cursor-pointer"
           >
             <span>📄 이력서 &amp; 자기소개서 다운로드</span>
           </button>
 
           <button
             onclick="generatePDF('portfolio')"
-            class="px-5.5 py-3.5 bg-white border border-[#E6DFD5] text-[#2A221C] text-xs font-bold tracking-wider uppercase hover:border-[#1A1410] transition-all inline-flex items-center gap-2 shadow-2xs rounded-full cursor-pointer"
+            class="px-5.5 py-3.5 bg-[#1f1633] border border-[#362d59] text-white text-xs font-bold tracking-wider uppercase hover:border-[#c2ef4e] transition-all inline-flex items-center gap-2 shadow-2xs rounded-full cursor-pointer"
           >
             <span>📥 포트폴리오 북 다운로드</span>
           </button>
@@ -272,12 +270,12 @@
     </section>
 
     <!-- 프로젝트 대형 쇼케이스 -->
-    <section id="portfolio" class="py-20 bg-[#F4F0E8]/60 border-t border-[#E6DFD5]">
+    <section id="portfolio" class="py-20 bg-[#1f1633] border-t border-[#362d59]">
       <div class="max-w-7xl mx-auto px-6 sm:px-8 space-y-12">
-        <div class="border-b border-[#E6DFD5] pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div class="border-b border-[#362d59] pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <span id="web-portfolio-badge" class="text-xs font-mono uppercase tracking-[0.25em] text-[#8C6D53] font-bold">Core Works</span>
-            <h2 id="portfolio-section-title" class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#1A1410] font-display mt-1">
+            <span id="web-portfolio-badge" class="text-xs font-mono uppercase tracking-[0.25em] text-[#c2ef4e] font-bold">Core Works</span>
+            <h2 id="portfolio-section-title" class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-display mt-1">
               Selected Masterpieces
             </h2>
           </div>
@@ -285,7 +283,7 @@
             <button 
               type="button"
               onclick="addNewProject()"
-              class="editor-only px-4 py-2.5 bg-[#1A1410] hover:bg-[#8C6D53] text-[#FAF8F5] text-xs font-mono font-bold transition-all flex items-center gap-1.5 shadow-sm rounded-full cursor-pointer"
+              class="editor-only px-4 py-2.5 bg-[#c2ef4e] hover:bg-[#b2df3e] text-[#150f23] text-xs font-mono font-bold transition-all flex items-center gap-1.5 shadow-sm rounded-full cursor-pointer"
               title="새로운 프로젝트를 포트폴리오에 추가합니다"
             >
               <span>➕</span>
@@ -294,15 +292,15 @@
             <button 
               type="button"
               onclick="openProjectOrderModal()"
-              class="editor-only px-4 py-2.5 bg-white hover:bg-[#1A1410] hover:text-white border border-[#E6DFD5] text-[#1A1410] text-xs font-mono font-bold transition-all flex items-center gap-2 shadow-2xs rounded-full cursor-pointer group"
+              class="editor-only px-4 py-2.5 bg-[#1f1633] hover:bg-[#c2ef4e] hover:text-[#150f23] border border-[#362d59] text-white text-xs font-mono font-bold transition-all flex items-center gap-2 shadow-2xs rounded-full cursor-pointer group"
               title="프로젝트 노출 순서를 자유롭게 변경하고 관리합니다"
             >
               <span class="text-base group-hover:rotate-180 transition-transform duration-300">⇅</span>
               <span>순서 변경 / 관리</span>
-              <span class="bg-[#8C6D53] text-white text-[10px] px-2 py-0.5 font-mono font-bold rounded-full">자율 설정</span>
+              <span class="bg-[#c2ef4e] text-[#150f23] text-[10px] px-2 py-0.5 font-mono font-bold rounded-full">자율 설정</span>
             </button>
-            <p id="portfolio-categories-summary" class="text-xs text-[#6B523E] font-mono hidden md:block">
-              <strong class="text-[#1A1410]">포트폴리오 프로젝트 구분</strong>: 뷰티 &amp; 헤어살롱(1), 주거(1), 업무(1), 맞춤 가구(1)
+            <p id="portfolio-categories-summary" class="text-xs text-[#bdb8c0] font-mono hidden md:block">
+              <strong class="text-white">포트폴리오 프로젝트 구분</strong>: 뷰티 &amp; 헤어살롱(1), 주거(1), 업무(1), 맞춤 가구(1)
             </p>
           </div>
         </div>
@@ -314,26 +312,26 @@
     </section>
 
     <!-- 신입 디자이너 프로필 Bento 섹션 -->
-    <section id="designer-profile" class="py-20 bg-white border-t border-b border-[#E6DFD5]">
+    <section id="designer-profile" class="py-20 bg-[#1f1633] border-t border-b border-[#362d59]">
       <div class="max-w-7xl mx-auto px-6 sm:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           <!-- Bento Box 1: 지원자 성명 & 디자인 슬로건 (8 Columns) -->
-          <div class="lg:col-span-8 bg-[#FAF8F5] p-8 sm:p-12 rounded-3xl border border-[#E6DFD5] shadow-[0_8px_30px_rgba(42,34,28,0.03)] space-y-6 flex flex-col justify-between">
+          <div class="lg:col-span-8 bg-[#150f23] p-8 sm:p-12 rounded-3xl border border-[#362d59] shadow-2xl space-y-6 flex flex-col justify-between">
             <div class="space-y-4">
-              <div class="inline-flex items-center gap-2.5 px-3 py-1 bg-white border border-[#E6DFD5] text-[#8C6D53] text-xs font-mono font-bold rounded-full shadow-2xs">
-                <span class="w-2 h-2 rounded-full bg-[#8C6D53]"></span>
+              <div class="inline-flex items-center gap-2.5 px-3 py-1 bg-[#1f1633] border border-[#362d59] text-[#c2ef4e] text-xs font-mono font-bold rounded-full shadow-2xs">
+                <span class="w-2 h-2 rounded-full bg-[#c2ef4e]"></span>
                 <span>CANDIDATE PROFILE · 신입 공간 디자이너</span>
               </div>
               
               <div>
-                <h2 id="web-profile-name" class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#1A1410] font-display break-keep">
-                  김지원 <span id="web-profile-title" class="text-base sm:text-xl font-normal text-[#8C6D53] font-sans">| 신입 실내건축 디자이너 / 공간 디자이너</span>
+                <h2 id="web-profile-name" class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white font-display break-keep">
+                  김지원 <span id="web-profile-title" class="text-base sm:text-xl font-normal text-[#bdb8c0] font-sans">| 신입 실내건축 디자이너 / 공간 디자이너</span>
                 </h2>
               </div>
 
-              <div class="p-5 bg-white rounded-2xl border border-[#E6DFD5] shadow-2xs">
-                <p id="web-profile-intro" class="text-[#2A221C] text-base sm:text-lg font-medium leading-relaxed break-keep font-sans">
+              <div class="p-5 bg-[#1f1633] rounded-2xl border border-[#362d59] shadow-2xs">
+                <p id="web-profile-intro" class="text-[#bdb8c0] text-base sm:text-lg font-medium leading-relaxed break-keep font-sans">
                   “공간은 사람의 삶을 닮아야 합니다. 공간에 머무는 사람의 행태를 분석하고, 심미성과 시공 가능성을 동시에 갖춘 도면을 그립니다.”
                 </p>
               </div>
@@ -341,41 +339,41 @@
 
             <!-- 기본 팩트 정보 미니 칩스 -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs font-mono">
-              <div class="p-3 bg-white rounded-xl border border-[#E6DFD5] flex items-center gap-2.5 text-[#2A221C]">
-                <span class="p-1.5 rounded-lg bg-[#F4F0E8] text-[#8C6D53]">📅</span>
+              <div class="p-3 bg-[#1f1633] rounded-xl border border-[#362d59] flex items-center gap-2.5 text-[#bdb8c0]">
+                <span class="p-1.5 rounded-lg bg-[#362d59] text-white">📅</span>
                 <div>
-                  <span class="text-[10px] text-[#8C6D53] block font-semibold">생년월일</span>
-                  <span class="font-bold">2002. 08. 19</span>
+                  <span class="text-[10px] text-[#bdb8c0] block font-semibold">생년월일</span>
+                  <span class="font-bold text-white">2002. 08. 19</span>
                 </div>
               </div>
-              <div class="p-3 bg-white rounded-xl border border-[#E6DFD5] flex items-center gap-2.5 text-[#2A221C]">
-                <span class="p-1.5 rounded-lg bg-[#F4F0E8] text-[#8C6D53]">📞</span>
+              <div class="p-3 bg-[#1f1633] rounded-xl border border-[#362d59] flex items-center gap-2.5 text-[#bdb8c0]">
+                <span class="p-1.5 rounded-lg bg-[#362d59] text-white">📞</span>
                 <div>
-                  <span class="text-[10px] text-[#8C6D53] block font-semibold">연락처</span>
-                  <span class="font-bold">010-8494-8456</span>
+                  <span class="text-[10px] text-[#bdb8c0] block font-semibold">연락처</span>
+                  <span class="font-bold text-white">010-8494-8456</span>
                 </div>
               </div>
-              <div class="p-3 bg-white rounded-xl border border-[#E6DFD5] flex items-center gap-2.5 text-[#2A221C]">
-                <span class="p-1.5 rounded-lg bg-[#F4F0E8] text-[#8C6D53]">✉️</span>
+              <div class="p-3 bg-[#1f1633] rounded-xl border border-[#362d59] flex items-center gap-2.5 text-[#bdb8c0]">
+                <span class="p-1.5 rounded-lg bg-[#362d59] text-white">✉️</span>
                 <div>
-                  <span class="text-[10px] text-[#8C6D53] block font-semibold">이메일</span>
-                  <span class="font-bold truncate">toya0819@gmail.com</span>
+                  <span class="text-[10px] text-[#bdb8c0] block font-semibold">이메일</span>
+                  <span class="font-bold text-white truncate">toya0819@gmail.com</span>
                 </div>
               </div>
-              <div class="p-3 bg-white rounded-xl border border-[#E6DFD5] flex items-center gap-2.5 text-[#2A221C]">
-                <span class="p-1.5 rounded-lg bg-[#F4F0E8] text-[#8C6D53]">🎓</span>
+              <div class="p-3 bg-[#1f1633] rounded-xl border border-[#362d59] flex items-center gap-2.5 text-[#bdb8c0]">
+                <span class="p-1.5 rounded-lg bg-[#362d59] text-white">🎓</span>
                 <div>
-                  <span class="text-[10px] text-[#8C6D53] block font-semibold">학력 &amp; 이수</span>
-                  <span class="font-bold text-[11px] truncate">포천일고 보통과 / KD 아카데미 수료</span>
+                  <span class="text-[10px] text-[#bdb8c0] block font-semibold">학력 &amp; 이수</span>
+                  <span class="font-bold text-white text-[11px] truncate">포천일고 보통과 / KD 아카데미 수료</span>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Bento Box 2: 소프트웨어 역량 & 서류 바로가기 (4 Columns) -->
-          <div class="lg:col-span-4 bg-[#FAF8F5] p-8 rounded-3xl border border-[#E6DFD5] shadow-[0_8px_30px_rgba(42,34,28,0.03)] space-y-6 flex flex-col justify-between">
+          <div class="lg:col-span-4 bg-[#150f23] p-8 rounded-3xl border border-[#362d59] shadow-2xl space-y-6 flex flex-col justify-between">
             <div class="space-y-4">
-              <span class="text-xs font-mono font-bold text-[#8C6D53] uppercase block tracking-wider">
+              <span class="text-xs font-mono font-bold text-[#c2ef4e] uppercase block tracking-wider">
                 💻 SOFTWARE PROFICIENCY
               </span>
               
@@ -385,11 +383,11 @@
             </div>
 
             <!-- 서류 편집 & 다운로드 툴바 -->
-            <div class="space-y-3 border-t border-[#E6DFD5] pt-5">
+            <div class="space-y-3 border-t border-[#362d59] pt-5">
               <button 
                 type="button" 
                 onclick="openResumeModal('resume')"
-                class="editor-only w-full py-3.5 bg-[#8C6D53] hover:bg-[#6B523E] text-white font-bold text-center block uppercase tracking-wider transition-all rounded-xl shadow-sm text-xs cursor-pointer"
+                class="editor-only w-full py-3.5 bg-[#c2ef4e] hover:bg-[#b2df3e] text-[#150f23] font-bold text-center block uppercase tracking-wider transition-all rounded-xl shadow-sm text-xs cursor-pointer"
                 title="이력서 인적사항, 학력, 자격증, 소프트웨어 역량 및 자기소개서 4개 항목을 직접 수정합니다"
               >
                 <span>✏️ 이력서 &amp; 자기소개서 직접 수정</span>
@@ -398,7 +396,7 @@
               <button 
                 type="button" 
                 onclick="generatePDF('resume')"
-                class="w-full py-3.5 bg-[#1A1410] text-[#FAF8F5] font-bold text-center block uppercase tracking-wider hover:bg-[#8C6D53] transition-all rounded-xl shadow-md text-xs cursor-pointer"
+                class="w-full py-3.5 bg-[#1f1633] hover:bg-[#362d59] border border-[#362d59] text-white font-bold text-center block uppercase tracking-wider transition-all rounded-xl shadow-md text-xs cursor-pointer"
               >
                 <span>📄 이력서 &amp; 자기소개서 다운로드</span>
               </button>
@@ -406,7 +404,7 @@
               <button 
                 type="button" 
                 onclick="generatePDF('portfolio')"
-                class="w-full py-3 bg-white border border-[#E6DFD5] text-[#1A1410] font-bold text-center block uppercase tracking-wider hover:border-[#1A1410] transition-all rounded-xl shadow-2xs text-xs cursor-pointer"
+                class="w-full py-3 bg-[#1f1633] border border-[#362d59] text-[#bdb8c0] hover:text-white hover:border-[#c2ef4e] font-bold text-center block uppercase tracking-wider transition-all rounded-xl shadow-2xs text-xs cursor-pointer"
               >
                 <span>📥 포트폴리오 북 다운로드</span>
               </button>
@@ -2304,10 +2302,10 @@
         const rendersCount = p.renders ? p.renders.length : 1;
 
         return `
-        <div class="bg-white/95 rounded-3xl border border-[#E6DFD5] shadow-[0_10px_35px_rgba(42,34,28,0.04)] hover:shadow-[0_20px_50px_rgba(42,34,28,0.08)] transition-all duration-500 overflow-hidden grid grid-cols-1 lg:grid-cols-12 p-3.5 sm:p-5 gap-4 sm:gap-6">
+        <div class="bg-[#150f23] rounded-3xl border border-[#362d59] shadow-2xl hover:border-[#6a5fc1] transition-all duration-500 overflow-hidden grid grid-cols-1 lg:grid-cols-12 p-3.5 sm:p-5 gap-4 sm:gap-6">
           <div 
             onclick="openModal('${p.id}', 'render', 0)"
-            class="lg:col-span-7 relative aspect-[16/10] bg-[#1A1410] rounded-2xl cursor-pointer group overflow-hidden shadow-inner"
+            class="lg:col-span-7 relative aspect-[16/10] bg-[#1f1633] rounded-2xl cursor-pointer group overflow-hidden border border-[#362d59] shadow-inner"
           >
             <img
               src="${thumb}"
@@ -2315,13 +2313,13 @@
               class="w-full h-full object-cover transition-all duration-700 ease-out sm:group-hover:opacity-30 sm:group-hover:scale-103"
             />
             ${hoverDrawing ? `
-              <div class="hidden sm:flex absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-white/95 items-center justify-center p-3 rounded-2xl shadow-inner">
+              <div class="hidden sm:flex absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-[#1f1633]/95 items-center justify-center p-3 rounded-2xl shadow-inner border border-[#362d59]">
                 <img 
                   src="${hoverDrawing.image}" 
                   alt="도면 투과 미리보기"
                   class="w-full h-full object-contain"
                 />
-                <span class="absolute bottom-4 right-4 px-3.5 py-1 text-[11px] uppercase font-mono tracking-widest bg-[#1A1410] text-[#FAF8F5] border border-[#2A221C] font-bold rounded-full shadow-md">
+                <span class="absolute bottom-4 right-4 px-3.5 py-1 text-[11px] uppercase font-mono tracking-widest bg-[#150f23] text-[#c2ef4e] border border-[#362d59] font-bold rounded-full shadow-md">
                   📐 도면 투과 (${hoverDrawing.title.split(' ')[0]} ${hoverDrawing.title.split(' ')[1] || ''})
                 </span>
               </div>
@@ -2329,7 +2327,7 @@
 
             <!-- ⭐️ 이미지 위 단정한 단일 배지: 프로젝트 번호 & 분류 ⭐️ -->
             <div class="absolute top-3 left-3 z-10 pointer-events-none">
-              <span id="card-badge-${p.id}" class="px-3.5 py-1 text-[11px] sm:text-xs font-mono font-bold uppercase bg-[#1A1410]/85 backdrop-blur-md text-[#FAF8F5] shadow-md rounded-full pointer-events-auto">
+              <span id="card-badge-${p.id}" class="px-3.5 py-1 text-[11px] sm:text-xs font-mono font-bold uppercase bg-[#150f23]/90 backdrop-blur-md text-[#c2ef4e] border border-[#362d59] shadow-md rounded-full pointer-events-auto">
                 ${p.number} · ${p.categoryName}
               </span>
             </div>
@@ -2337,43 +2335,43 @@
 
           <div class="lg:col-span-5 p-2 sm:p-4 flex flex-col justify-between space-y-4 sm:space-y-6">
             <div class="space-y-4">
-              <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-mono text-[#6B523E] border-b border-[#E6DFD5] pb-3">
+              <div class="flex items-center justify-between flex-wrap gap-2 text-xs font-mono text-[#bdb8c0] border-b border-[#362d59] pb-3">
                 <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-                  <span class="px-2.5 py-0.5 bg-[#8C6D53] text-white font-mono font-bold text-[11px] rounded-full shadow-2xs shrink-0">
+                  <span class="px-2.5 py-0.5 bg-[#1f1633] text-[#c2ef4e] border border-[#362d59] font-mono font-bold text-[11px] rounded-full shadow-2xs shrink-0">
                     순서 #0${idx + 1}
                   </span>
-                  <span class="text-xs font-mono text-[#1A1410] font-bold shrink-0">${p.number}</span>
-                  <span class="text-[#D5C4A1]">·</span>
-                  <span id="card-tag-${p.id}" class="text-[#2A221C] font-semibold truncate max-w-[140px] sm:max-w-none">${p.categoryName}</span>
+                  <span class="text-xs font-mono text-white font-bold shrink-0">${p.number}</span>
+                  <span class="text-[#362d59]">·</span>
+                  <span id="card-tag-${p.id}" class="text-[#bdb8c0] font-semibold truncate max-w-[140px] sm:max-w-none">${p.categoryName}</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <span id="card-area-${p.id}" class="px-2.5 py-0.5 bg-[#F4F0E8] border border-[#E7DFC6] text-[#8C6D53] font-bold text-[11px] rounded-full shadow-2xs">
+                  <span id="card-area-${p.id}" class="px-2.5 py-0.5 bg-[#1f1633] border border-[#362d59] text-[#bdb8c0] font-bold text-[11px] rounded-full shadow-2xs">
                     📐 ${p.area}
                   </span>
-                  <span class="shrink-0 text-[#8C6D53] font-semibold">${p.year}</span>
+                  <span class="shrink-0 text-[#bdb8c0] font-semibold">${p.year}</span>
                 </div>
               </div>
 
               <!-- 프로젝트 관리 액션 툴바 (순서 변경, 명칭/스튜디오 수정, 포트폴리오 제외) -->
-              <div class="editor-only flex items-center justify-between gap-2 flex-wrap bg-[#FAF8F5] p-2 rounded-xl border border-[#E6DFD5]">
+              <div class="editor-only flex items-center justify-between gap-2 flex-wrap bg-[#1f1633] p-2 rounded-xl border border-[#362d59]">
                 <div class="flex items-center gap-1.5">
-                  <span class="text-[11px] font-mono text-[#8C6D53] font-bold px-1">순서:</span>
-                  <div class="flex items-center bg-white border border-[#E6DFD5] p-0.5 rounded-lg shadow-2xs">
+                  <span class="text-[11px] font-mono text-[#bdb8c0] font-bold px-1">순서:</span>
+                  <div class="flex items-center bg-[#150f23] border border-[#362d59] p-0.5 rounded-lg shadow-2xs">
                     <button 
                       type="button"
                       onclick="event.stopPropagation(); moveProject('${p.id}', -1)"
                       ${idx === 0 ? 'disabled' : ''}
-                      class="px-2 py-0.5 text-xs font-mono font-bold transition-all flex items-center gap-1 ${idx === 0 ? 'opacity-25 cursor-not-allowed text-[#BBA47E]' : 'hover:bg-[#1A1410] hover:text-white text-[#2A221C] cursor-pointer rounded'}"
+                      class="px-2 py-0.5 text-xs font-mono font-bold transition-all flex items-center gap-1 ${idx === 0 ? 'opacity-25 cursor-not-allowed text-[#79628c]' : 'hover:bg-[#c2ef4e] hover:text-[#150f23] text-white cursor-pointer rounded'}"
                       title="${idx === 0 ? '가장 첫 번째 프로젝트입니다' : '이 프로젝트를 이전(위) 순서로 이동'}"
                     >
                       <span>▲</span><span>위로</span>
                     </button>
-                    <span class="text-[#E7DFC6] text-xs">|</span>
+                    <span class="text-[#362d59] text-xs">|</span>
                     <button 
                       type="button"
                       onclick="event.stopPropagation(); moveProject('${p.id}', 1)"
                       ${idx === PROJECTS.length - 1 ? 'disabled' : ''}
-                      class="px-2 py-0.5 text-xs font-mono font-bold transition-all flex items-center gap-1 ${idx === PROJECTS.length - 1 ? 'opacity-25 cursor-not-allowed text-[#BBA47E]' : 'hover:bg-[#1A1410] hover:text-white text-[#2A221C] cursor-pointer rounded'}"
+                      class="px-2 py-0.5 text-xs font-mono font-bold transition-all flex items-center gap-1 ${idx === PROJECTS.length - 1 ? 'opacity-25 cursor-not-allowed text-[#79628c]' : 'hover:bg-[#c2ef4e] hover:text-[#150f23] text-white cursor-pointer rounded'}"
                       title="${idx === PROJECTS.length - 1 ? '가장 마지막 프로젝트입니다' : '이 프로젝트를 다음(아래) 순서로 이동'}"
                     >
                       <span>아래로</span><span>▼</span>
@@ -2385,7 +2383,7 @@
                   <button 
                     onclick="openUploadModal('${p.id}', 'info')"
                     title="프로젝트 명칭, 공간 분류, 평형 및 기획 콘셉트 실시간 변경"
-                    class="text-xs font-mono font-semibold text-[#2A221C] hover:text-white hover:bg-[#1A1410] bg-white border border-[#E6DFD5] px-2.5 py-1 rounded-lg transition-colors flex items-center gap-1 shadow-2xs cursor-pointer"
+                    class="text-xs font-mono font-semibold text-white hover:text-[#150f23] hover:bg-[#c2ef4e] bg-[#150f23] border border-[#362d59] px-2.5 py-1 rounded-lg transition-colors flex items-center gap-1 shadow-2xs cursor-pointer"
                   >
                     <span>✏️ 명칭 / 설명 수정</span>
                   </button>
@@ -2394,7 +2392,7 @@
                     type="button"
                     onclick="deleteProject('${p.id}')"
                     title="이 프로젝트를 포트폴리오에서 제외(삭제)합니다"
-                    class="text-xs font-mono font-semibold text-rose-600 hover:text-rose-700 bg-white hover:bg-rose-50 border border-[#E6DFD5] hover:border-rose-300 px-2.5 py-1 rounded-lg transition-colors flex items-center gap-1 shadow-2xs cursor-pointer"
+                    class="text-xs font-mono font-semibold text-rose-400 hover:text-white bg-[#150f23] hover:bg-rose-900/50 border border-[#362d59] hover:border-rose-700 px-2.5 py-1 rounded-lg transition-colors flex items-center gap-1 shadow-2xs cursor-pointer"
                   >
                     <span>🗑️ 제외</span>
                   </button>
@@ -2403,23 +2401,23 @@
 
               <!-- 프로젝트 메인 제목 -->
               <div>
-                <h3 id="card-title-${p.id}" class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#1A1410] font-display break-keep leading-snug w-full">
+                <h3 id="card-title-${p.id}" class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-display break-keep leading-snug w-full">
                   ${p.title}
                 </h3>
               </div>
 
               <!-- 기획 콘셉트 설명 -->
-              <p id="card-concept-${p.id}" class="text-[#6B523E] text-sm leading-relaxed font-light break-keep">
+              <p id="card-concept-${p.id}" class="text-[#bdb8c0] text-sm leading-relaxed font-light break-keep">
                 ${p.concept}
               </p>
               
               <!-- ⭐️ [자율 구성된 2D CAD 도면 바로가기 버튼 세트] ⭐️ -->
               <div class="space-y-1.5 pt-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-xs font-mono text-[#8C6D53] font-bold uppercase">
+                  <span class="text-xs font-mono text-[#c2ef4e] font-bold uppercase">
                     2D 실시도면 세트 (${activeDrawings.length}종 수록):
                   </span>
-                  <span class="text-[10px] font-mono text-[#BBA47E]">클릭 시 즉시 열람</span>
+                  <span class="text-[10px] font-mono text-[#79628c]">클릭 시 즉시 열람</span>
                 </div>
 
                 ${activeDrawings.length > 0 ? `
@@ -2430,42 +2428,42 @@
                       return `
                         <button 
                           onclick="openModal('${p.id}', '${d.id}')" 
-                          class="px-2.5 py-2 bg-[#FAF8F5] hover:bg-[#1A1410] hover:text-white border border-[#E6DFD5] rounded-xl text-[11px] font-mono transition-all text-left group flex items-center justify-between shadow-2xs"
+                          class="px-2.5 py-2 bg-[#1f1633] hover:bg-[#c2ef4e] hover:text-[#150f23] border border-[#362d59] rounded-xl text-[11px] font-mono transition-all text-left group flex items-center justify-between shadow-2xs"
                           title="${d.title} 열람"
                         >
-                          <span class="font-bold block text-[#2A221C] group-hover:text-white truncate">${icon} ${shortTitle}</span>
-                          <span class="text-[#BBA47E] group-hover:text-[#D5C4A1] text-[10px] shrink-0">↗</span>
+                          <span class="font-bold block text-white group-hover:text-[#150f23] truncate">${icon} ${shortTitle}</span>
+                          <span class="text-[#c2ef4e] group-hover:text-[#150f23] text-[10px] shrink-0">↗</span>
                         </button>
                       `;
                     }).join('')}
                   </div>
                 ` : `
-                  <div class="p-3 bg-[#FAF8F5] border border-dashed border-[#E6DFD5] text-[#8C6D53] font-mono text-xs rounded-xl flex items-center justify-between">
+                  <div class="p-3 bg-[#1f1633] border border-dashed border-[#362d59] text-[#bdb8c0] font-mono text-xs rounded-xl flex items-center justify-between">
                     <span>현재 포함된 2D 도면이 없습니다.</span>
-                    <button onclick="openUploadModal('${p.id}', 'drawings')" class="text-[#1A1410] font-bold underline">도면 추가하기</button>
+                    <button onclick="openUploadModal('${p.id}', 'drawings')" class="text-[#c2ef4e] font-bold underline">도면 추가하기</button>
                   </div>
                 `}
               </div>
             </div>
 
-            <div class="pt-4 border-t border-[#E6DFD5] space-y-4">
+            <div class="pt-4 border-t border-[#362d59] space-y-4">
               <div class="flex items-center justify-between text-xs">
-                <span class="font-mono text-[#8C6D53] font-bold">사용 툴:</span>
+                <span class="font-mono text-[#bdb8c0] font-bold">사용 툴:</span>
                 <div class="flex flex-wrap gap-1">
-                  ${p.tools.map(t => `<span class="px-2.5 py-0.5 font-mono bg-[#F4F0E8] text-[#6B523E] border border-[#E7DFC6] rounded-full text-[11px] font-bold">${t}</span>`).join('')}
+                  ${p.tools.map(t => `<span class="px-2.5 py-0.5 font-mono bg-[#1f1633] text-[#c2ef4e] border border-[#362d59] rounded-full text-[11px] font-bold">${t}</span>`).join('')}
                 </div>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <button
                   onclick="openModal('${p.id}', 'render', 0)"
-                  class="viewer-expand w-full py-3.5 bg-[#1A1410] text-[#FAF8F5] text-xs font-bold uppercase tracking-wider hover:bg-[#8C6D53] transition-all rounded-xl flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                  class="viewer-expand w-full py-3.5 bg-[#c2ef4e] text-[#150f23] text-xs font-bold uppercase tracking-wider hover:bg-[#b2df3e] transition-all rounded-xl flex items-center justify-center gap-1.5 shadow-md cursor-pointer font-mono"
                 >
                   <span>3D 렌더 &amp; 2D 도면 뷰어</span>
                   <span>→</span>
                 </button>
                 <button
                   onclick="openUploadModal('${p.id}')"
-                  class="editor-only w-full py-3.5 bg-[#F4F0E8] hover:bg-[#E7DFC6] text-[#2A221C] border border-[#E7DFC6] text-xs font-mono font-bold tracking-tight transition-all rounded-xl flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer"
+                  class="editor-only w-full py-3.5 bg-[#1f1633] hover:bg-[#362d59] text-white border border-[#362d59] text-xs font-mono font-bold tracking-tight transition-all rounded-xl flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer"
                   title="3D 렌더 다중 등록 및 2D 캐드 도면 자율 추가/빼기를 관리합니다"
                 >
                   <span>⚙️ 도면 추가/제외 &amp; 렌더 관리</span>
@@ -3750,7 +3748,7 @@
       // 1. 프로필 성명 및 타이틀
       const nameEl = document.getElementById('web-profile-name');
       if (nameEl) {
-        nameEl.innerHTML = `${RESUME_DATA.name || '지원자'} <span id="web-profile-title" class="text-base font-normal text-stone-500 font-sans">| ${RESUME_DATA.title || 'Junior Interior Designer'}</span>`;
+        nameEl.innerHTML = `${RESUME_DATA.name || '지원자'} <span id="web-profile-title" class="text-base font-normal text-[#bdb8c0] font-sans">| ${RESUME_DATA.title || 'Junior Interior Designer'}</span>`;
       }
 
       // 2. 프로필 소개글
@@ -3765,12 +3763,12 @@
         swEl.innerHTML = RESUME_DATA.software.map(s => {
           const lvlText = getProficiencyText(s);
           return `
-            <div class="bg-white p-3.5 rounded-2xl border border-[#E6DFD5] shadow-2xs hover:border-[#8C6D53] transition-all space-y-1">
+            <div class="bg-[#1f1633] p-3.5 rounded-2xl border border-[#362d59] shadow-2xs hover:border-[#c2ef4e] transition-all space-y-1">
               <div class="flex justify-between items-center font-mono text-xs">
-                <span class="font-extrabold text-[#1A1410] text-sm">${s.name}</span>
-                <span class="px-3 py-1 rounded-full bg-[#8C6D53] text-white font-bold text-xs shadow-2xs">숙련도 : ${lvlText}</span>
+                <span class="font-extrabold text-white text-sm">${s.name}</span>
+                <span class="px-3 py-1 rounded-full bg-[#c2ef4e] text-[#150f23] font-bold text-xs shadow-2xs">숙련도 : ${lvlText}</span>
               </div>
-              ${s.desc ? `<p class="text-[11.5px] text-[#6B523E] font-sans leading-relaxed font-normal pt-0.5">${s.desc}</p>` : ''}
+              ${s.desc ? `<p class="text-[11.5px] text-[#bdb8c0] font-sans leading-relaxed font-normal pt-0.5">${s.desc}</p>` : ''}
             </div>
           `;
         }).join('');
