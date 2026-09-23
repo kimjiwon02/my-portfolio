@@ -8039,12 +8039,17 @@ ${sourceText || '(초안 없음. 해당 항목에 어울리는 최상의 실무 
     let isEditorMode = false;
     let isAdminAuthorized = false;
 
+    function getActiveAdminPin() {
+      return localStorage.getItem('kd_admin_custom_pin') || ADMIN_SECRET_PIN;
+    }
+
     function initPortfolioMode() {
       const params = new URLSearchParams(window.location.search);
       const adminParam = params.get('admin') || params.get('edit') || params.get('key');
+      const activePin = getActiveAdminPin();
 
-      // 1. 비밀 URL 접속 확인 (예: ?admin=1234 또는 ?admin=kd1234)
-      if (adminParam === ADMIN_SECRET_PIN || adminParam === 'kd1234' || adminParam === 'master') {
+      // 1. 비밀 URL 접속 확인 (예: ?admin=1234 또는 ?admin=변경된비밀번호)
+      if (adminParam === activePin || adminParam === ADMIN_SECRET_PIN || adminParam === 'kd1234' || adminParam === 'master') {
         localStorage.setItem('kd_admin_auth', 'true');
         localStorage.setItem('kd_portfolio_mode', 'edit');
         // 주소창에서 파라미터 흔적을 지워 다른 사람에게 노출 방지
@@ -8074,10 +8079,11 @@ ${sourceText || '(초안 없음. 해당 항목에 어울리는 최상의 실무 
         togglePortfolioMode();
         return;
       }
+      const activePin = getActiveAdminPin();
       const entered = prompt("🔑 [KD 포트폴리오 관리자 인증]\n본인(작성자) 전용 비밀번호를 입력하세요:");
       if (entered === null) return;
 
-      if (entered.trim() === ADMIN_SECRET_PIN || entered.trim() === "kd1234") {
+      if (entered.trim() === activePin || entered.trim() === ADMIN_SECRET_PIN || entered.trim() === "kd1234") {
         localStorage.setItem('kd_admin_auth', 'true');
         localStorage.setItem('kd_portfolio_mode', 'edit');
         isAdminAuthorized = true;
@@ -8088,6 +8094,37 @@ ${sourceText || '(초안 없음. 해당 항목에 어울리는 최상의 실무 
       } else {
         alert("❌ 비밀번호가 올바르지 않습니다.");
       }
+    }
+
+    // ⭐️ [관리자 비밀번호(PIN) 변경 함수] ⭐️
+    function changeAdminPin() {
+      if (!isAdminAuthorized) {
+        alert("관리자 인증 후 비밀번호를 변경하실 수 있습니다.");
+        return;
+      }
+      const activePin = getActiveAdminPin();
+      const inputCurrent = prompt("🔑 [관리자 비밀번호 변경]\n현재 관리자 비밀번호를 입력하세요:");
+      if (inputCurrent === null) return;
+
+      if (inputCurrent.trim() !== activePin && inputCurrent.trim() !== ADMIN_SECRET_PIN && inputCurrent.trim() !== "kd1234") {
+        alert("❌ 현재 비밀번호가 일치하지 않습니다.");
+        return;
+      }
+
+      const newPin = prompt("✨ 사용할 새로운 비밀번호(PIN)를 입력하세요 (예: 5678):");
+      if (!newPin || !newPin.trim()) {
+        alert("⚠️ 비밀번호는 비어 있을 수 없습니다.");
+        return;
+      }
+
+      const confirmPin = prompt("✨ 새로운 비밀번호를 한 번 더 입력하여 확인하세요:");
+      if (newPin.trim() !== confirmPin?.trim()) {
+        alert("❌ 입력하신 두 비밀번호가 일치하지 않습니다.");
+        return;
+      }
+
+      localStorage.setItem('kd_admin_custom_pin', newPin.trim());
+      alert(`✅ 관리자 비밀번호가 성공적으로 변경되었습니다!\n새 비밀번호: ${newPin.trim()}\n(기존 1234 비밀번호 대신 변경된 새 비밀번호로 관리자 로그인됩니다)`);
     }
 
     // 관리자 로그아웃 (다시 완벽히 잠그기)
@@ -8192,7 +8229,7 @@ ${sourceText || '(초안 없음. 해당 항목에 어울리는 최상의 실무 
       try {
         showModeToast(true, "⏳ <strong>수정본을 패키징하는 중입니다...</strong>");
 
-        // 1. 현재 배포된 원본 index.html 가져오기
+        // 1. 현재 배포된 원본 index.html 가져오기 (file:// 프로토콜 호환 보장)
         let html = "";
         try {
           const targetUrl = window.location.pathname.endsWith('.html') ? window.location.pathname : './index.html';
@@ -8201,11 +8238,23 @@ ${sourceText || '(초안 없음. 해당 항목에 어울리는 최상의 실무 
             html = await resp.text();
           }
         } catch (e) {
-          console.warn("Fetch failed, trying fallback", e);
+          console.warn("Fetch failed, using DOM fallback", e);
+        }
+
+        // 로컬 file:// 접속 시 fetch 제한 폴백 (DOM 복제 기반 생성)
+        if (!html) {
+          try {
+            const clone = document.documentElement.cloneNode(true);
+            const printArea = clone.querySelector('#print-area');
+            if (printArea) printArea.innerHTML = '';
+            html = '<!DOCTYPE html>\n<html lang="' + (document.documentElement.lang || 'ko') + '" class="scroll-smooth">\n' + clone.outerHTML + '\n</html>';
+          } catch(e) {
+            console.error("DOM outerHTML fallback error:", e);
+          }
         }
 
         if (!html) {
-          alert("원본 파일을 읽어오지 못했습니다. 인터넷 연결 또는 로컬 환경을 확인해 주세요.");
+          alert("원본 소스코드를 구성하지 못했습니다. 인터넷 연결 또는 브라우저 환경을 확인해 주세요.");
           return;
         }
 
@@ -8286,6 +8335,14 @@ ${sourceText || '(초안 없음. 해당 항목에 어울리는 최상의 실무 
       <span id="mode-toggle-icon">✏️</span>
       <span id="mode-toggle-text">편집 모드</span>
       <span id="mode-toggle-subtext" class="text-[10px] opacity-70 hidden sm:inline">[감상 전환]</span>
+    </button>
+    <button 
+      type="button" 
+      onclick="changeAdminPin()" 
+      class="px-2.5 py-1.5 bg-stone-800 hover:bg-stone-700 text-amber-300 font-mono text-[11px] font-bold border-t border-b border-stone-700 shadow-sm cursor-pointer transition-all"
+      title="관리자 비밀번호를 자유롭게 변경합니다"
+    >
+      <span>🔑 PIN 변경</span>
     </button>
     <button 
       type="button" 
