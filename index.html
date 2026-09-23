@@ -8335,7 +8335,8 @@ ${sourceText || '(초안 없음. 해당 항목에 어울리는 최상의 실무 
       }
 
       localStorage.setItem('kd_admin_custom_pin', newPin.trim());
-      alert(`✅ 관리자 비밀번호가 성공적으로 변경되었습니다!\n새 비밀번호: ${newPin.trim()}\n(기존 1234 비밀번호 대신 변경된 새 비밀번호로 관리자 로그인됩니다)`);
+      showModeToast(true, `🔑 <strong>비밀번호 변경 완료!</strong> 새 비밀번호: ${newPin.trim()}`);
+      alert(`✅ 관리자 비밀번호가 '${newPin.trim()}'(으)로 변경되었습니다!\n\n📱 [모바일 / 스마트폰 적용 필수 단계]:\nPC에서 변경한 비밀번호가 모바일(스마트폰)에도 동일하게 적용되려면,\n하단 [💾 수정본 저장] 버튼을 눌러 다운로드된 index.html을 GitHub에 업로드해 주세요!`);
     }
 
     // 관리자 로그아웃 (다시 완벽히 잠그기)
@@ -8491,6 +8492,12 @@ ${sourceText || '(초안 없음. 해당 항목에 어울리는 최상의 실무 
         if (typeof PROJECTS !== 'undefined' && PROJECTS) {
           const projectsJson = JSON.stringify(PROJECTS, null, 2);
           html = html.replace(/let PROJECTS\s*=\s*\[[\s\S]*?\n\s*\];/, `let PROJECTS = ${projectsJson};`);
+        }
+
+        // 5.5 ADMIN_SECRET_PIN 치환 (변경된 비밀번호가 index.html 소스코드에 각인되어 스마트폰/모바일/GitHub 배포에서도 100% 작용)
+        const activePin = getActiveAdminPin();
+        if (activePin) {
+          html = html.replace(/const ADMIN_SECRET_PIN\s*=\s*"[^"]*";/, `const ADMIN_SECRET_PIN = "${activePin}";`);
         }
 
         // 6. 브라우저에서 index.html 다운로드 트리거
